@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { data, stylesCmp } from '../../mocks/mock'
 import MessageUtil from '../utils/MessageUtil';
+import notify from '../utils/Notification' 
 const Questions = ({ category }) => {
   const [appInfo, setAppInfo] = useState();
   const [currentQuestion, setCurrentQuestion] = useState(1);
@@ -89,7 +90,7 @@ const Questions = ({ category }) => {
 
         if (filteredAnswer && filteredAnswer.length > 0) {
           if (filteredAnswer[0].id == filteredQuestion[0].correct_answer_id) {
-            console.log('Resposta correta')
+            notify('success', 'Parabéns!')
             let newOrderQuestions = questionsData.filter(e => e.question != questionAwnsered)
             console.info(`new order questions => ${JSON.stringify(newOrderQuestions)}`)
             if(newOrderQuestions && newOrderQuestions.length > 0) {
@@ -97,7 +98,7 @@ const Questions = ({ category }) => {
               setDynamicLength(newOrderQuestions.length)
             }
           } else {
-            console.log('Resposta incorreta')
+            notify('error','Não foi dessa vez!')
           }
         }
       }
