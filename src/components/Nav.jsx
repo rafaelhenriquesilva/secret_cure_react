@@ -27,22 +27,12 @@ function Nav() {
           </NavLink>
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <NavLink to="medicamentos" className="nav-link">
-                <h6 className="tlink">Medicamentos</h6>
+              <NavLink to="saude_mental" className="nav-link">
+                <h6 className="tlink">Saúde Mental</h6>
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="curativos" className="nav-link">
-                <h6 className="tlink">Curativos</h6>
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="suplementos" className="nav-link">
-                <h6 className="tlink">Suplementos</h6>
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="carrinho" className="nav-link" id='posicao_nav'>
+              <NavLink to="user" className="nav-link" id='posicao_nav'>
                 <h6 className="tlink_Carrinho"><AiOutlineUser size={30}/></h6>
               </NavLink>
             </li>

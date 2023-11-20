@@ -18,10 +18,8 @@ const router = createBrowserRouter([
     children: [
       {path: '/', element: <Home/>},
       { path: '/home', element: <Home /> },
-      { path: '/medicamentos', element: <Questions /> },
-      { path: '/curativos', element:  <Questions />},
-      { path: '/suplementos', element: <Questions />},
-      { path: '/carrinho', element: <UserDetail/> }
+      { path: '/saude_mental', element: <Questions category="saude_mental"/> },
+      { path: '/user', element: <UserDetail /> }
     ]
   }
 ])
