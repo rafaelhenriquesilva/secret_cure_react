@@ -1,0 +1,21 @@
+.card_container {
+    display: flex;
+    justify-content:space-between;
+    margin: 0;
+    padding: 0;
+}
+#card:hover {
+ color: blue;
+}
+
+.card-click {
+    cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+    .card_container {
+        flex-direction: column;
+    }
+    .card-click {
+        margin-bottom: 10px; /* Adicione uma margem inferior menor */
+    }
+}

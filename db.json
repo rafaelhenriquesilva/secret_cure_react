@@ -1,0 +1,255 @@
+{
+    "medicamentos": [
+        { 
+            "nome": "dipirona",
+            "valor": 14.90,
+            "image": "https://storage.googleapis.com/helprobotic/dipirona.png",
+            "description": "Dipirona 500mg/ml solução gotas 10ml medley genérico",
+            "pharmas": [
+                {
+                    "name": "Drogaria Vera Cruz",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Drogaria Lecer",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Droga Raia",
+                    "updateValue": 10.95
+                }
+            ]
+        },
+        {
+            "nome": "Pantoprazol",
+            "valor": 89.90,
+            "image": "https://storage.googleapis.com/helprobotic/pantoprazol.png",
+            "description": "Pantoprazol 40mg C/28 Comp",
+            "pharmas": [
+                {
+                    "name": "Drogaria Vera Cruz",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Drogaria Lecer",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Droga Raia",
+                    "updateValue": 10.95
+                }
+            ]
+        },
+        {
+            "nome": "Paracetamol",
+            "valor": 8.00,
+            "image": "https://storage.googleapis.com/helprobotic/paracetamol.png",
+            "description": "Paracetamol capsule 32 x 50",
+            "pharmas": [
+                {
+                    "name": "Drogaria Vera Cruz",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Drogaria Lecer",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Droga Raia",
+                    "updateValue": 10.95
+                }
+            ]
+  
+        },
+        {
+            "nome": "Buscopan",
+            "valor": 18.37,
+            "image": "https://storage.googleapis.com/helprobotic/buscopan.png",
+            "description": "Buscopan 10mg, caixa com 20 drágeas",
+            "pharmas": [
+                {
+                    "name": "Drogaria Vera Cruz",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Drogaria Lecer",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Droga Raia",
+                    "updateValue": 10.95
+                }
+            ]
+        }
+    ],
+    "suplementos": [
+        {
+            "nome": "Probióticos",
+            "valor": 84.40,
+            "image": "https://storage.googleapis.com/helprobotic/probioticos.png",
+            "description": "",
+            "pharmas": [
+                {
+                    "name": "Drogaria Vera Cruz",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Drogaria Lecer",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Droga Raia",
+                    "updateValue": 10.95
+                }
+            ]
+        },
+        {
+            "nome": "omega 3",
+            "valor": 41.30,
+            "image": "https://storage.googleapis.com/helprobotic/omega.png",
+            "description": "",
+            "pharmas": [
+                {
+                    "name": "Drogaria Vera Cruz",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Drogaria Lecer",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Droga Raia",
+                    "updateValue": 10.95
+                }
+            ]
+        },
+        {
+            "nome": "Vitamina D3",
+            "valor": 22.40,
+            "image": "https://storage.googleapis.com/helprobotic/vitaminad.png",
+            "description": "",
+            "pharmas": [
+                {
+                    "name": "Drogaria Vera Cruz",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Drogaria Lecer",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Droga Raia",
+                    "updateValue": 10.95
+                }
+            ]
+        },
+        {
+            "nome": "Multivitaminico",
+            "valor": 36.90,
+            "image": "https://storage.googleapis.com/helprobotic/multivitaminico.png",
+            "description": "",
+            "pharmas": [
+                {
+                    "name": "Drogaria Vera Cruz",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Drogaria Lecer",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Droga Raia",
+                    "updateValue": 10.95
+                }
+            ]
+        }
+    ],
+    "curativos": [
+        {
+            "nome": "Fita Adesiva",
+            "valor": 20.90,
+            "image": "https://storage.googleapis.com/helprobotic/atadura.png",
+            "description": "Fita Adesiva 3M Nexcare 25mm x 1,35m, Branca",
+            "pharmas": [
+                {
+                    "name": "Drogaria Vera Cruz",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Drogaria Lecer",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Droga Raia",
+                    "updateValue": 10.95
+                }
+            ]
+        },
+        {
+            "nome": "Gaze",
+            "valor": 2.50,
+            "image": "https://storage.googleapis.com/helprobotic/gaze.png",
+            "description": "Compressa de Gaze Algodonada Estéril - Polarfix",
+            "pharmas": [
+                {
+                    "name": "Drogaria Vera Cruz",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Drogaria Lecer",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Droga Raia",
+                    "updateValue": 10.95
+                }
+            ]
+        },
+        {
+            "nome": "Soro Fisiológico",
+            "valor": 12.90,
+            "image": "https://storage.googleapis.com/helprobotic/soro.png",
+            "description": "Soro Fisiológico 500ml Sorimax Farmax",
+            "pharmas": [
+                {
+                    "name": "Drogaria Vera Cruz",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Drogaria Lecer",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Droga Raia",
+                    "updateValue": 10.95
+                }
+            ]
+        },
+        {
+            "nome": "Tegaderm",
+            "valor": 24.90,
+            "image": "https://storage.googleapis.com/helprobotic/tegagem.png",
+            "description": "Tegaderm 3M 1626W 10CM X 12CM 1 Unidade",
+            "pharmas": [
+                {
+                    "name": "Drogaria Vera Cruz",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Drogaria Lecer",
+                    "updateValue": 12.80
+                },
+                {
+                    "name": "Droga Raia",
+                    "updateValue": 10.95
+                }
+            ]
+        }
+       
+    ],
+    "info": {
+            "meu_nome": "Lucas",
+            "primeiro_irmao": "Rafael",
+            "segundo_irmao": "Luis"
+    }
+  }

@@ -1,0 +1,115 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.titulo_home {
+  padding-left: 4vw;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  margin-top: 20px;
+  flex-direction: column;
+  background-color: #DEE0E0;
+}
+
+.paragrafo_footer {
+  text-align: center;
+  color: #D46C75;
+}
+
+.closeButton {
+  width: 23%;
+  position: absolute;
+  top: 10px; /* Ajuste a posição superior conforme necessário */
+  right: 10px; /* Ajuste a posição direita conforme necessário */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.botao {
+  margin: 2px;
+  text-align: center;
+  padding-right: 6px;
+  padding-left: 6px;
+}
+
+#contador {
+  text-align: center;
+}
+
+.preco {
+  margin-top: 5px;
+}
+
+#destacado_preco {
+  color: #D46C75;
+  font-size: 30px;
+}
+
+#botao_carrinho {
+  border: 2px solid #EEDEE1;
+  margin-left: 50px;
+}
+
+.titulo_produtos {
+  padding-left: 40px;
+}
+
+#posicao_nav {
+  float: right;
+}
+
+.tlink_Carrinho {
+  position: absolute;
+  left: 70vw;
+}
+
+img#displayed {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titulo_table, .conteudo_table {
+  text-align: center;
+}
+
+.container_carrinho {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .titulo_table,
+  .conteudo_table {
+    font-size: 12px; /* Reduz o tamanho da fonte para melhorar a leitura em telas menores */
+  }
+  .container_carrinho {
+    overflow-x: auto; /* Adiciona uma barra de rolagem horizontal em telas menores */
+  }
+  .container_finalizaPedido {
+    text-align: center; /* Centraliza o texto no contêiner em telas menores */
+  }
+}
+@media (max-width: 576px) {
+  .botao {
+    font-size: 10px; /* Reduz o tamanho do texto nos botões */
+    padding: 5px 8px; /* Ajusta o espaçamento interno dos botões */
+  }
+  #contador {
+    font-size: 12px; /* Reduz o tamanho da fonte no contador */
+  }
+}
+@media (max-width: 576px) {
+  #botao_finalizaCompra {
+    width: 100%; /* Faz o botão ocupar toda a largura em telas menores */
+  }
+}/*# sourceMappingURL=style.css.map */
