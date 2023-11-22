@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import {stylesContainer} from '../../css/styles'
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -20,45 +20,7 @@ const Login = () => {
     setPassword(event.target.value);
   };
 
-  const styles = {
-    container: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh',
-    },
-    formContainer: {
-      display: 'flex',
-      width: '70%',
-    },
-    form: {
-      width: '50%',
-      marginRight: '20px',
-    },
-    input: {
-      width: '100%',
-      marginBottom: '15px',
-      padding: '8px',
-    },
-    button: {
-      width: '100%',
-      padding: '10px',
-      backgroundColor: 'blue',
-      color: '#fff',
-      border: 'none',
-      cursor: 'pointer',
-    },
-    cardContainer: {
-      width: '50%',
-      backgroundColor: '#f2f2f2',
-      padding: '20px',
-    },
-    cardImage: {
-      width: '100%',
-      height: 'auto',
-    },
-  };
-
+  const styles = stylesContainer
   return (
     <div style={styles.container}>
       <div style={styles.formContainer}>

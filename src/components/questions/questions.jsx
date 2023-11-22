@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { data, stylesCmp } from '../../mocks/mock'
+import { data } from '../../mocks/mock'
+import { stylesQuestion } from '../../css/styles'
 import MessageUtil from '../utils/MessageUtil';
 import notify from '../utils/Notification' 
 const Questions = ({ category }) => {
@@ -105,7 +106,7 @@ const Questions = ({ category }) => {
     }
   }
 
-  const styles = stylesCmp.question
+  const styles = stylesQuestion
 
 
   return (
