@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {stylesContainer} from '../../css/styles'
-const Login = () => {
+const Login = ({ onLoginSuccess  }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -9,6 +9,8 @@ const Login = () => {
       alert('Por favor, preencha todos os campos.');
       return;
     }
+    onLoginSuccess();
+    return true;
     // Lógica para enviar os dados para a API ou para autenticar o usuário
   };
 
