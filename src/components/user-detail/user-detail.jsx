@@ -83,22 +83,44 @@ const UserDetail = () => {
             </p>
           </div>
           <h2>Conquistas</h2>
-          <div style={styles.achievements}>
+          <div style={{ ...styles.achievements, display: 'flex', flexWrap: 'wrap' }}>
             {userDetail.achievements.map((achievement, index) => (
               <div
                 key={index}
                 style={{
                   ...styles.achievement,
+                  width: 'calc(33.33% - 20px)', // Ajuste aqui para deixar 3 colunas com espaçamento de 20px
+                  margin: '10px', // Espaçamento entre as conquistas
                   ...(achievement.min_level <= userDetail.user_info.level
-                    ? { backgroundColor: '#c7ffd8' } // verde claro para desbloqueadas
-                    : { backgroundColor: '#ffc7c7' } // vermelho claro para bloqueadas
+                    ? { backgroundColor: '#c7ffd8' }
+                    : { backgroundColor: '#ffc7c7' }
                   ),
                 }}
                 onMouseEnter={handleAchievementHover}
                 onMouseLeave={handleAchievementLeave}
               >
                 {achievement.title} 
-                <div className="hover-text" style={{ ...styles.achievementHover, ...styles.achievementHoverText }}>
+                <div
+                  className="hover-text"
+                  style={{
+                    ...styles.achievementHover,
+                    ...styles.achievementHoverText,
+                    position: 'absolute',
+                    top: '100%',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    visibility: 'hidden',
+                    opacity: '0',
+                    backgroundColor: achievement.min_level <= userDetail.user_info.level ? '#c7ffd8' : '#ffc7c7',
+                    color: '#000',
+                    padding: '10px',
+                    borderRadius: '5px',
+                    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
+                    zIndex: '1',
+                    textAlign: 'center',
+                    width: '80%',
+                  }}
+                >
                   {achievement.text}
                 </div>
               </div>
