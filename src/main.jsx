@@ -4,21 +4,30 @@ import { createBrowserRouter, RouterProvider, useNavigate } from 'react-router-d
 import App from './App.jsx';
 import Home from './routes/Home.jsx';
 import Error from './components/Error.jsx';
-import Products from './routes/Products.jsx';
 import UserDetail from './components/user-detail/user-detail.jsx';
 import Questions from './components/questions/questions.jsx';
 import Login from './components/login/login.jsx';
+import Logout from './components/logout/logout.jsx';
 
 const MainApp = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate(); // Certifique-se de importar corretamente
+  const navigate = useNavigate();
 
   const handleLoginSuccess = () => {
     setIsLoggedIn(true);
     navigate('/home');
   };
 
-  return isLoggedIn ? <App /> : <Login onLoginSuccess={handleLoginSuccess} />;
+  const handleLogout = () => {
+    setIsLoggedIn(false); // Atualiza o estado para falso (não autenticado)
+    navigate('/'); // Redireciona para a página de login após o logout
+  };
+
+  return isLoggedIn ? (
+    <App handleLogout={handleLogout} />
+  ) : (
+    <Login onLoginSuccess={handleLoginSuccess} />
+  );
 };
 
 const router = createBrowserRouter([
@@ -30,9 +39,10 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/home', element: <Home /> },
       { path: '/saude_mental', element: <Questions category="saude_mental" /> },
-      { path: '/user', element: <UserDetail /> },
+      { path: '/user', element: <UserDetail /> }
     ],
   },
+  { path: '/logout', element: <Logout /> }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
