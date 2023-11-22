@@ -172,16 +172,19 @@ export const stylesUserDetail = {
     },
     formContainer: {
       display: 'flex',
-      width: '40%',
+      width: '80%',
+      maxWidth: '900px', // Limitando o tamanho máximo para telas maiores
+      margin: '0 auto', // Centralizando horizontalmente
     },
     form: {
-      width: '50%',
+      flex: '1', // Ocupando o espaço disponível
       marginRight: '20px',
     },
     input: {
       width: '100%',
       marginBottom: '15px',
       padding: '8px',
+      fontSize: '16px', // Ajustando o tamanho da fonte
     },
     button: {
       width: '100%',
@@ -190,17 +193,20 @@ export const stylesUserDetail = {
       color: '#fff',
       border: 'none',
       cursor: 'pointer',
+      fontSize: '16px', // Ajustando o tamanho da fonte
     },
     cardContainer: {
-      width: '50%',
+      flex: '1', // Ocupando o espaço disponível
       backgroundColor: '#f2f2f2',
       padding: '20px',
     },
     cardImage: {
       width: '100%',
       height: 'auto',
+      display: 'block', // Garantindo que a imagem se ajuste corretamente
+      margin: '0 auto', // Centralizando horizontalmente
     },
-  }; 
+  };
 
   export const stylesHome = {
     container: {

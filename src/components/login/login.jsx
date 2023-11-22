@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import {stylesContainer} from '../../css/styles'
-const Login = ({ onLoginSuccess  }) => {
+import { stylesContainer } from '../../css/styles';
+
+const Login = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -22,7 +23,8 @@ const Login = ({ onLoginSuccess  }) => {
     setPassword(event.target.value);
   };
 
-  const styles = stylesContainer
+  const styles = stylesContainer;
+
   return (
     <div style={styles.container}>
       <div style={styles.formContainer}>
