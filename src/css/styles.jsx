@@ -205,20 +205,26 @@ export const stylesUserDetail = {
   export const stylesHome = {
     container: {
       display: 'flex',
+      flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      height: '75vh',
+      padding: '20px',
     },
     cardContainer: {
-      width: '70%',
+      width: '100%',
+      maxWidth: '700px',
       backgroundColor: '#f2f2f2',
       padding: '20px',
+      marginBottom: '20px',
     },
     cardImage: {
       width: '100%',
       height: 'auto',
+      borderRadius: '10px',
     },
-    p:{
-        padding: '30px'
-    }
-  }; 
+    p: {
+      padding: '20px',
+      textAlign: 'center',
+      maxWidth: '700px',
+    },
+  };

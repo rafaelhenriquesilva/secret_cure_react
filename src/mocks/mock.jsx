@@ -119,7 +119,7 @@ export const data = {
                 ]
             }
          ],
-         "levels_allowed": [
+         "achievements": [
             {
                 "min_level": 0,
                 "max_level": 0,

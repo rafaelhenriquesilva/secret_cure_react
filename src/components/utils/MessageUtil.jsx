@@ -5,6 +5,7 @@ const MessageUtil = ({ message }) => {
   const styles = {
     container: {
       backgroundColor: '#f0f0f0',
+      color: '#343a40',
       padding: '10px',
       borderRadius: '5px',
       margin: '20px 0',

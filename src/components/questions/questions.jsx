@@ -81,6 +81,12 @@ const Questions = ({ category }) => {
   const saveQuestion = (e) => {
     e.preventDefault()
 
+    if(questionsData && questionsData.length == 0){
+      notify('error','Acabou as questões por enquanto')
+
+      return;
+    }
+
     let questionAwnsered = questionsData[questionIndex - 1].question
 
     if (appInfo['questions'] && appInfo['questions'].length > 0) {
@@ -91,10 +97,10 @@ const Questions = ({ category }) => {
 
         if (filteredAnswer && filteredAnswer.length > 0) {
           if (filteredAnswer[0].id == filteredQuestion[0].correct_answer_id) {
-            notify('success', 'Parabéns!')
+            // notify('success', 'Parabéns!')
             let newOrderQuestions = questionsData.filter(e => e.question != questionAwnsered)
             console.info(`new order questions => ${JSON.stringify(newOrderQuestions)}`)
-            if(newOrderQuestions && newOrderQuestions.length > 0) {
+            if(newOrderQuestions) {
               setQuestionsData(newOrderQuestions)
               setDynamicLength(newOrderQuestions.length)
             }
