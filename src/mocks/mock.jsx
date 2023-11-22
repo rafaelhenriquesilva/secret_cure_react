@@ -19,8 +19,8 @@ export const data = {
                 "text": "Uma alimentação saudável desempenha um papel vital na promoção da saúde e do bem-estar. Consumir uma variedade de alimentos nutritivos fornece ao corpo os nutrientes necessários para funcionar corretamente. Isso inclui uma combinação de frutas, vegetais, proteínas magras, grãos integrais e gorduras saudáveis. Além disso, é fundamental manter um equilíbrio entre a ingestão de calorias e a atividade física para um estilo de vida saudável.",
                 "category": "saude_mental"
             }
-    
-            
+
+
         ],
         "questions": [
             {
@@ -118,8 +118,11 @@ export const data = {
                     }
                 ]
             }
-         ],
-         "achievements": [
+        ],
+
+    },
+    user_detail: {
+        "achievements": [
             {
                 "min_level": 0,
                 "max_level": 0,
@@ -156,11 +159,11 @@ export const data = {
                 "title": "Indomavel dos diagnosticos",
                 "text": "Sua abordagem unica, sua curiosidade insaciavel e sua capacidade de enfrentar desafios incomparavel. Continue desbravando novos horizontes na medicina!"
             }
-        ]
-    },
-    "user_info": {
-        "name": "Rafa",
-        "email": "rafa@mail.com",
-        "level": 2
+        ],
+        "user_info": {
+            "name": "Rafa",
+            "email": "rafa@mail.com",
+            "level": 2
+        }
     }
 }

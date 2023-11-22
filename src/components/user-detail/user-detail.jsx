@@ -1,8 +1,59 @@
-import React from 'react';
-import atadura from '../../assets/atadura.png'
-import { stylesUserDetail } from '../../css/styles'
+import React, { useState, useEffect } from 'react';
+import atadura from '../../assets/atadura.png';
+import { stylesUserDetail } from '../../css/styles';
+
 const UserDetail = () => {
-  const styles = stylesUserDetail
+  const styles = stylesUserDetail;
+  const [userDetail, setUserDetail] = useState(null);
+
+  useEffect(() => {
+    const userDetailData = {
+      "user_info": {
+        "name": "Rafa",
+        "email": "rafa@mail.com",
+        "level": 2
+      },
+      "achievements": [
+        {
+          "min_level": 0,
+          "max_level": 0,
+          "title": "Desbravador",
+          "text": "Mergulhe no apaixonante mundo da medicina"
+        },
+        {
+          "min_level": 1,
+          "max_level": 1,
+          "title": "Iniciante dos diagnosticos",
+          "text": "Tu esta plantando as sementes do conhecimento medicinal, aprendendo a interpretar os sinais e sintomas para encontrar o caminho certo para os pacientes."
+        },
+        {
+          "min_level": 2,
+          "max_level": 2,
+          "title": "Intermediario dos diagnosticos",
+          "text": "Tu esta aprimorando suas habilidades, conectando os pontos e iniciando a ver padroes. Continue assim, cada diagnostico um degrau rumo a maestria."
+        },
+        {
+          "min_level": 3,
+          "max_level": 3,
+          "title": "Mestre dos diagnosticos",
+          "text": "Seu olhar clinico afiado e suas assertividade. Continue inspirando outros com seu empenho e conhecimento na busca pela saude dos pacientes."
+        },
+        {
+          "min_level": 4,
+          "max_level": 4,
+          "title": "Especialista dos diagnosticos",
+          "text": "Sua habilidade em diagnosticar casos complexos notavel e seu compromisso com a excelÃªncia admiravel."
+        },
+        {
+          "min_level": 5,
+          "max_level": 100,
+          "title": "Indomavel dos diagnosticos",
+          "text": "Sua abordagem unica, sua curiosidade insaciavel e sua capacidade de enfrentar desafios incomparavel. Continue desbravando novos horizontes na medicina!"
+        }
+      ]
+    };
+    setUserDetail(userDetailData);
+  }, []);
 
   const handleAchievementHover = (e) => {
     e.currentTarget.querySelector('.hover-text').style.visibility = 'visible';
@@ -16,42 +67,45 @@ const UserDetail = () => {
 
   return (
     <div style={styles.userDetails}>
-      <div style={styles.userInfo}>
-        <img src={atadura} alt="User Avatar" style={styles.userImage} />
-        <div style={styles.level}>
-          Level 5
-          <div style={styles.levelBar}></div>
-        </div>
-      </div>
-      <div style={styles.heroCard}>
-        <h2>Descrição do Herói</h2>
-        <p style={styles.heroDescription}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac eros justo. Integer euismod euismod lacus, eget eleifend nisi dapibus a.
-        </p>
-      </div>
-      <h2>Conquistas</h2>
-      <div style={styles.achievements}>
-        <div
-          style={styles.achievement}
-          onMouseEnter={handleAchievementHover}
-          onMouseLeave={handleAchievementLeave}
-        >
-          Conquista 1 (Desbloqueada)
-          <div className="hover-text" style={{ ...styles.achievementHover, ...styles.achievementHoverText }}>
-            Descrição da Conquista 1
+      {userDetail && (
+        <>
+          <div style={styles.userInfo}>
+            <img src={atadura} alt="User Avatar" style={styles.userImage} />
+            <div style={styles.level}>
+              Level {userDetail.user_info.level}
+              <div style={styles.levelBar}></div>
+            </div>
           </div>
-        </div>
-        <div
-          style={{ ...styles.achievement, ...styles.locked }}
-          onMouseEnter={handleAchievementHover}
-          onMouseLeave={handleAchievementLeave}
-        >
-          Conquista 2 (Bloqueada)
-          <div className="hover-text" style={{ ...styles.achievementHover, ...styles.achievementHoverText }}>
-            Descrição da Conquista 2
+          <div style={styles.heroCard}>
+            <h2>Descrição do Herói</h2>
+            <p style={styles.heroDescription}>
+              Prepare-se para uma jornada onde salvar vidas se torna uma aventura épica! No universo dos games, mergulhe fundo na medicina, onde cada diagnóstico é uma missão e cada paciente é um desafio a ser vencido. Descubra a emoção de aprender salvando vidas neste jogo eletrizante, onde o conhecimento se transforma em poder, e a medicina se torna a mais envolvente das conquistas!
+            </p>
           </div>
-        </div>
-      </div>
+          <h2>Conquistas</h2>
+          <div style={styles.achievements}>
+            {userDetail.achievements.map((achievement, index) => (
+              <div
+                key={index}
+                style={{
+                  ...styles.achievement,
+                  ...(achievement.min_level <= userDetail.user_info.level
+                    ? { backgroundColor: '#c7ffd8' } // verde claro para desbloqueadas
+                    : { backgroundColor: '#ffc7c7' } // vermelho claro para bloqueadas
+                  ),
+                }}
+                onMouseEnter={handleAchievementHover}
+                onMouseLeave={handleAchievementLeave}
+              >
+                {achievement.title} 
+                <div className="hover-text" style={{ ...styles.achievementHover, ...styles.achievementHoverText }}>
+                  {achievement.text}
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };
