@@ -1,18 +1,35 @@
 import { useState } from 'react';
 import { stylesContainer } from '../../css/styles';
+import LoginService from '../../services/Login.service';
+import notify from '../utils/Notification';
 
 const Login = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (username.trim() === '' || password.trim() === '') {
       alert('Por favor, preencha todos os campos.');
       return;
     }
+
+    const system_users = await LoginService.getUsers()
+    console.log(system_users.data)
+
+    let userIsExists = system_users.data.find(user => user.username == username.trim())
+
+    if(!userIsExists) {
+      notify('error', 'Usuário não existe')
+      return;
+    } 
+
+    if(userIsExists.password != password.trim()){
+      notify('error', 'Senha incorreta')
+      return;
+    }
+
     onLoginSuccess();
     return true;
-    // Lógica para enviar os dados para a API ou para autenticar o usuário
   };
 
   const handleUsernameChange = (event) => {
@@ -25,10 +42,10 @@ const Login = ({ onLoginSuccess }) => {
 
   const styles = stylesContainer;
 
-  return (
+  return  (
     <div style={styles.container}>
       <div style={styles.formContainer}>
-        <form style={styles.form}>
+      <form style={styles.form}>
           <input
             type="text"
             placeholder="Usuário"
@@ -48,11 +65,7 @@ const Login = ({ onLoginSuccess }) => {
           </button>
         </form>
         <div style={styles.cardContainer}>
-          <img
-            src="https://via.placeholder.com/400"
-            alt="Imagem Bacana"
-            style={styles.cardImage}
-          />
+          <h1 style={styles.appTitle}>Secret Cure: o caminho para a salvação</h1>
         </div>
       </div>
     </div>

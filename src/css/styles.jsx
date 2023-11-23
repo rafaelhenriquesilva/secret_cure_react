@@ -206,6 +206,18 @@ export const stylesUserDetail = {
       display: 'block', // Garantindo que a imagem se ajuste corretamente
       margin: '0 auto', // Centralizando horizontalmente
     },
+    cardContainer: {
+      flex: '1',
+      backgroundColor: '#f2f2f2',
+      padding: '20px',
+      textAlign: 'center', // Aligning the title at the center
+    },
+    appTitle: {
+      fontSize: '24px',
+      fontWeight: 'bold',
+      color: '#333',
+      margin: '0',
+    },
   };
 
   export const stylesHome = {

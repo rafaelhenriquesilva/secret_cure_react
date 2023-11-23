@@ -6,16 +6,15 @@ const Logout = () => {
 
   useEffect(() => {
     const handleLogout = () => {
-      // Lógica de logout...
-      // Exemplo: limpar tokens, dados de autenticação, etc.
-
-      navigate('/'); // Redireciona para a página de login após o logout
+      
+      localStorage.clear();
+      navigate('/'); 
     };
 
     handleLogout();
   }, [navigate]);
 
-  return null; // Não é necessário retornar conteúdo, já que é apenas para efetuar o logout
+  return null; 
 };
 
 export default Logout;

@@ -1,58 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import atadura from '../../assets/atadura.png';
 import { stylesUserDetail } from '../../css/styles';
+import UserDetailService from '../../services/UserDetail.service';
 
 const UserDetail = () => {
   const styles = stylesUserDetail;
   const [userDetail, setUserDetail] = useState(null);
 
   useEffect(() => {
-    const userDetailData = {
-      "user_info": {
-        "name": "Rafa",
-        "email": "rafa@mail.com",
-        "level": 2
-      },
-      "achievements": [
-        {
-          "min_level": 0,
-          "max_level": 0,
-          "title": "Desbravador",
-          "text": "Mergulhe no apaixonante mundo da medicina"
-        },
-        {
-          "min_level": 1,
-          "max_level": 1,
-          "title": "Iniciante dos diagnosticos",
-          "text": "Tu esta plantando as sementes do conhecimento medicinal, aprendendo a interpretar os sinais e sintomas para encontrar o caminho certo para os pacientes."
-        },
-        {
-          "min_level": 2,
-          "max_level": 2,
-          "title": "Intermediario dos diagnosticos",
-          "text": "Tu esta aprimorando suas habilidades, conectando os pontos e iniciando a ver padroes. Continue assim, cada diagnostico um degrau rumo a maestria."
-        },
-        {
-          "min_level": 3,
-          "max_level": 3,
-          "title": "Mestre dos diagnosticos",
-          "text": "Seu olhar clinico afiado e suas assertividade. Continue inspirando outros com seu empenho e conhecimento na busca pela saude dos pacientes."
-        },
-        {
-          "min_level": 4,
-          "max_level": 4,
-          "title": "Especialista dos diagnosticos",
-          "text": "Sua habilidade em diagnosticar casos complexos notavel e seu compromisso com a excelÃªncia admiravel."
-        },
-        {
-          "min_level": 5,
-          "max_level": 100,
-          "title": "Indomavel dos diagnosticos",
-          "text": "Sua abordagem unica, sua curiosidade insaciavel e sua capacidade de enfrentar desafios incomparavel. Continue desbravando novos horizontes na medicina!"
+    const loadData = async () => {
+      try {
+        const response = await UserDetailService.getInfo();
+  
+        let combinedUserData = { ...response.data };
+  
+        if (localStorage.getItem('userInfo')) {
+          const localStorageData = JSON.parse(localStorage.getItem('userInfo'));
+  
+          combinedUserData.user_info = localStorageData['user_info']
+          console.log(`localStorageData => ${JSON.stringify(localStorageData)}`)
         }
-      ]
+  
+        setUserDetail(combinedUserData);
+      } catch (error) {
+        // Lida com erros na requisição
+        console.error('Erro ao carregar detalhes do usuário:', error);
+      }
     };
-    setUserDetail(userDetailData);
+  
+    loadData();
   }, []);
 
   const handleAchievementHover = (e) => {
@@ -89,8 +65,8 @@ const UserDetail = () => {
                 key={index}
                 style={{
                   ...styles.achievement,
-                  width: 'calc(33.33% - 20px)', // Ajuste aqui para deixar 3 colunas com espaçamento de 20px
-                  margin: '10px', // Espaçamento entre as conquistas
+                  width: 'calc(33.33% - 20px)', 
+                  margin: '10px', 
                   ...(achievement.min_level <= userDetail.user_info.level
                     ? { backgroundColor: '#c7ffd8' }
                     : { backgroundColor: '#ffc7c7' }

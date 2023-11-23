@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { data } from '../../mocks/mock'
 import { stylesQuestion } from '../../css/styles'
 import MessageUtil from '../utils/MessageUtil';
 import notify from '../utils/Notification' 
+import AppInfoService from '../../services/AppInfo.service';
+
 const Questions = ({ category }) => {
+  const [userLevel, setUserLevel] = useState(0);
   const [appInfo, setAppInfo] = useState();
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [selectedOption, setSelectedOption] = useState({});
@@ -23,11 +25,15 @@ const Questions = ({ category }) => {
   const [dynamicLength, setDynamicLength] = useState(5)
 
   useEffect(() => {
-    const loadQuestions = () => {
+    const storedUserLevel = JSON.parse(localStorage.getItem('userInfo'))?.user_info?.level;
+    setUserLevel(storedUserLevel || 0);
+    const loadQuestions = async () => {
+      let appInfo = await AppInfoService.getInfo()
+
       let questions = [];
-      if (data.app_info && data.app_info.questions && data.app_info.questions.length > 0) {
-        setAppInfo(data.app_info)
-        questions = data.app_info.questions.filter(e => e.category === category);
+      if (appInfo.data && appInfo.data.questions && appInfo.data.questions.length > 0) {
+        setAppInfo(appInfo.data)
+        questions = appInfo.data.questions.filter(e => e.category === category);
       }
 
       let questionsDataDynamic = [];
@@ -99,10 +105,10 @@ const Questions = ({ category }) => {
           if (filteredAnswer[0].id == filteredQuestion[0].correct_answer_id) {
             // notify('success', 'Parabéns!')
             let newOrderQuestions = questionsData.filter(e => e.question != questionAwnsered)
-            console.info(`new order questions => ${JSON.stringify(newOrderQuestions)}`)
             if(newOrderQuestions) {
               setQuestionsData(newOrderQuestions)
               setDynamicLength(newOrderQuestions.length)
+              updateUserLevel()
             }
           } else {
             notify('error','Não foi dessa vez!')
@@ -111,6 +117,15 @@ const Questions = ({ category }) => {
       }
     }
   }
+
+  const updateUserLevel = () => {
+    const updatedUserLevel = userLevel + 1;
+    setUserLevel(updatedUserLevel);
+  
+    let data = JSON.parse(localStorage.getItem('userInfo'));
+    data.user_info.level = updatedUserLevel;
+    localStorage.setItem('userInfo', JSON.stringify(data));
+  };
 
   const styles = stylesQuestion
 

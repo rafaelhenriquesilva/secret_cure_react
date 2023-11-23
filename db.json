@@ -1,255 +1,179 @@
 {
-    "medicamentos": [
-        { 
-            "nome": "dipirona",
-            "valor": 14.90,
-            "image": "https://storage.googleapis.com/helprobotic/dipirona.png",
-            "description": "Dipirona 500mg/ml solução gotas 10ml medley genérico",
-            "pharmas": [
-                {
-                    "name": "Drogaria Vera Cruz",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Drogaria Lecer",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Droga Raia",
-                    "updateValue": 10.95
-                }
-            ]
-        },
-        {
-            "nome": "Pantoprazol",
-            "valor": 89.90,
-            "image": "https://storage.googleapis.com/helprobotic/pantoprazol.png",
-            "description": "Pantoprazol 40mg C/28 Comp",
-            "pharmas": [
-                {
-                    "name": "Drogaria Vera Cruz",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Drogaria Lecer",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Droga Raia",
-                    "updateValue": 10.95
-                }
-            ]
-        },
-        {
-            "nome": "Paracetamol",
-            "valor": 8.00,
-            "image": "https://storage.googleapis.com/helprobotic/paracetamol.png",
-            "description": "Paracetamol capsule 32 x 50",
-            "pharmas": [
-                {
-                    "name": "Drogaria Vera Cruz",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Drogaria Lecer",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Droga Raia",
-                    "updateValue": 10.95
-                }
-            ]
-  
-        },
-        {
-            "nome": "Buscopan",
-            "valor": 18.37,
-            "image": "https://storage.googleapis.com/helprobotic/buscopan.png",
-            "description": "Buscopan 10mg, caixa com 20 drágeas",
-            "pharmas": [
-                {
-                    "name": "Drogaria Vera Cruz",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Drogaria Lecer",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Droga Raia",
-                    "updateValue": 10.95
-                }
-            ]
+    "app_info": {
+        "categories": [
+            {
+                "title": "Saúde Mental",
+                "api_name": "saude_mental",
+                "text": "",
+                "position": 1
+            }
+        ],
+        "contents": [
+            {
+                "title": "Saúde Mental",
+                "text": "A saúde mental é tão crucial quanto a saúde física para o bem-estar geral de uma pessoa. Envolve o equilíbrio emocional, psicológico e social, influenciando a maneira como lidamos com o estresse, tomamos decisões e interagimos com os outros. Cuidar da saúde mental significa cultivar pensamentos positivos, lidar com emoções de forma saudável e buscar apoio quando necessário.",
+                "category": "saude_mental"
+            },
+            {
+                "title": "Alimentação Saudável",
+                "text": "Uma alimentação saudável desempenha um papel vital na promoção da saúde e do bem-estar. Consumir uma variedade de alimentos nutritivos fornece ao corpo os nutrientes necessários para funcionar corretamente. Isso inclui uma combinação de frutas, vegetais, proteínas magras, grãos integrais e gorduras saudáveis. Além disso, é fundamental manter um equilíbrio entre a ingestão de calorias e a atividade física para um estilo de vida saudável.",
+                "category": "saude_mental"
+            }
+
+
+        ],
+        "questions": [
+            {
+                "text": "O que é saúde mental e por que é importante cuidar dela?",
+                "correct_answer_id": 2,
+                "category": "saude_mental",
+                "answers": [
+                    {
+                        "text": "Saúde mental refere-se apenas à ausência de doenças mentais graves.",
+                        "id": 1
+                    },
+                    {
+                        "text": "É o equilíbrio emocional, psicológico e social, crucial para o bem-estar geral.",
+                        "id": 2
+                    },
+                    {
+                        "text": "Significa evitar o estresse em todas as situações.",
+                        "id": 3
+                    }
+                ]
+            },
+            {
+                "text": "Quais são algumas estratégias simples que podem ajudar a melhorar a saúde mental no dia a dia?",
+                "correct_answer_id": 2,
+                "category": "saude_mental",
+                "answers": [
+                    {
+                        "text": "Ignorar os problemas e não falar sobre emoções.",
+                        "id": 1
+                    },
+                    {
+                        "text": "Praticar atividades físicas, buscar hobbies e ter uma boa noite de sono.",
+                        "id": 2
+                    },
+                    {
+                        "text": "Isolar-se completamente das interações sociais.",
+                        "id": 3
+                    }
+                ]
+            },
+            {
+                "text": "Por que é fundamental procurar ajuda profissional quando enfrentamos dificuldades emocionais ou psicológicas?",
+                "category": "saude_mental",
+                "correct_answer_id": 2,
+                "answers": [
+                    {
+                        "text": "Porque é uma moda atual procurar terapia.",
+                        "id": 1
+                    },
+                    {
+                        "text": "Profissionais de saúde mental podem oferecer suporte, diagnóstico correto e estratégias para lidar com questões emocionais.",
+                        "id": 2
+                    },
+                    {
+                        "text": "É melhor enfrentar os problemas sozinho, sem a ajuda de ninguém.",
+                        "id": 3
+                    }
+                ]
+            },
+            {
+                "text": "Por que é importante manter uma alimentação equilibrada e saudável?",
+                "category": "saude_mental",
+                "correct_answer_id": 2,
+                "answers": [
+                    {
+                        "text": "Para seguir as tendências da moda.",
+                        "id": 1
+                    },
+                    {
+                        "text": "Uma alimentação equilibrada fornece ao corpo os nutrientes necessários para funcionar corretamente.",
+                        "id": 2
+                    },
+                    {
+                        "text": "Porque não importa o que comemos, o corpo sempre se adapta.",
+                        "id": 3
+                    }
+                ]
+            },
+            {
+                "text": "Quais são alguns componentes essenciais de uma alimentação saudável?",
+                "correct_answer_id": 2,
+                "category": "saude_mental",
+                "answers": [
+                    {
+                        "text": "Apenas frutas e legumes são essenciais para uma alimentação saudável.",
+                        "id": 1
+                    },
+                    {
+                        "text": "Uma combinação de frutas, vegetais, proteínas magras, grãos integrais e gorduras saudáveis.",
+                        "id": 2
+                    },
+                    {
+                        "text": "Qualquer alimento pode ser consumido desde que seja em pequenas quantidades.",
+                        "id": 3
+                    }
+                ]
+            }
+        ]
+
+    },
+    "user_detail": {
+        "achievements": [
+            {
+                "min_level": 0,
+                "max_level": 0,
+                "title": "Desbravador",
+                "text": "Mergulhe no apaixonante mundo da medicina"
+            },
+            {
+                "min_level": 1,
+                "max_level": 1,
+                "title": "Iniciante dos diagnosticos",
+                "text": "Tu esta plantando as sementes do conhecimento medicinal, aprendendo a interpretar os sinais e sintomas para encontrar o caminho certo para os pacientes."
+            },
+            {
+                "min_level": 2,
+                "max_level": 2,
+                "title": "Intermediario dos diagnosticos",
+                "text": "Tu esta aprimorando suas habilidades, conectando os pontos e iniciando a ver padroes. Continue assim, cada diagnostico um degrau rumo a maestria."
+            },
+            {
+                "min_level": 3,
+                "max_level": 3,
+                "title": "Mestre dos diagnosticos",
+                "text": "Seu olhar clinico afiado e suas assertividade. Continue inspirando outros com seu empenho e conhecimento na busca pela saude dos pacientes."
+            },
+            {
+                "min_level": 4,
+                "max_level": 4,
+                "title": "Especialista dos diagnosticos",
+                "text": "Sua habilidade em diagnosticar casos complexos notavel e seu compromisso com a excelÃªncia admiravel."
+            },
+            {
+                "min_level": 5,
+                "max_level": 100,
+                "title": "Indomavel dos diagnosticos",
+                "text": "Sua abordagem unica, sua curiosidade insaciavel e sua capacidade de enfrentar desafios incomparavel. Continue desbravando novos horizontes na medicina!"
+            }
+        ],
+        "user_info": {
+            "name": "Rafa",
+            "email": "rafa@mail.com",
+            "level": 2
         }
-    ],
-    "suplementos": [
+    },
+    "system_users": [
         {
-            "nome": "Probióticos",
-            "valor": 84.40,
-            "image": "https://storage.googleapis.com/helprobotic/probioticos.png",
-            "description": "",
-            "pharmas": [
-                {
-                    "name": "Drogaria Vera Cruz",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Drogaria Lecer",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Droga Raia",
-                    "updateValue": 10.95
-                }
-            ]
+            "username": "front.web",
+            "password": "front.web123"
         },
         {
-            "nome": "omega 3",
-            "valor": 41.30,
-            "image": "https://storage.googleapis.com/helprobotic/omega.png",
-            "description": "",
-            "pharmas": [
-                {
-                    "name": "Drogaria Vera Cruz",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Drogaria Lecer",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Droga Raia",
-                    "updateValue": 10.95
-                }
-            ]
-        },
-        {
-            "nome": "Vitamina D3",
-            "valor": 22.40,
-            "image": "https://storage.googleapis.com/helprobotic/vitaminad.png",
-            "description": "",
-            "pharmas": [
-                {
-                    "name": "Drogaria Vera Cruz",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Drogaria Lecer",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Droga Raia",
-                    "updateValue": 10.95
-                }
-            ]
-        },
-        {
-            "nome": "Multivitaminico",
-            "valor": 36.90,
-            "image": "https://storage.googleapis.com/helprobotic/multivitaminico.png",
-            "description": "",
-            "pharmas": [
-                {
-                    "name": "Drogaria Vera Cruz",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Drogaria Lecer",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Droga Raia",
-                    "updateValue": 10.95
-                }
-            ]
+            "username": "fiap2023",
+            "password": "fiap_web"
         }
-    ],
-    "curativos": [
-        {
-            "nome": "Fita Adesiva",
-            "valor": 20.90,
-            "image": "https://storage.googleapis.com/helprobotic/atadura.png",
-            "description": "Fita Adesiva 3M Nexcare 25mm x 1,35m, Branca",
-            "pharmas": [
-                {
-                    "name": "Drogaria Vera Cruz",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Drogaria Lecer",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Droga Raia",
-                    "updateValue": 10.95
-                }
-            ]
-        },
-        {
-            "nome": "Gaze",
-            "valor": 2.50,
-            "image": "https://storage.googleapis.com/helprobotic/gaze.png",
-            "description": "Compressa de Gaze Algodonada Estéril - Polarfix",
-            "pharmas": [
-                {
-                    "name": "Drogaria Vera Cruz",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Drogaria Lecer",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Droga Raia",
-                    "updateValue": 10.95
-                }
-            ]
-        },
-        {
-            "nome": "Soro Fisiológico",
-            "valor": 12.90,
-            "image": "https://storage.googleapis.com/helprobotic/soro.png",
-            "description": "Soro Fisiológico 500ml Sorimax Farmax",
-            "pharmas": [
-                {
-                    "name": "Drogaria Vera Cruz",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Drogaria Lecer",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Droga Raia",
-                    "updateValue": 10.95
-                }
-            ]
-        },
-        {
-            "nome": "Tegaderm",
-            "valor": 24.90,
-            "image": "https://storage.googleapis.com/helprobotic/tegagem.png",
-            "description": "Tegaderm 3M 1626W 10CM X 12CM 1 Unidade",
-            "pharmas": [
-                {
-                    "name": "Drogaria Vera Cruz",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Drogaria Lecer",
-                    "updateValue": 12.80
-                },
-                {
-                    "name": "Droga Raia",
-                    "updateValue": 10.95
-                }
-            ]
-        }
-       
-    ],
-    "info": {
-            "meu_nome": "Lucas",
-            "primeiro_irmao": "Rafael",
-            "segundo_irmao": "Luis"
-    }
-  }
+    ]
+}

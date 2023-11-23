@@ -4,10 +4,21 @@ import gamer from '../assets/gamer.jpg'
 import especialistas from '../assets/especialistas.jpg'
 import doctor_skin from '../assets/doctor_skin.jpg'
 import PropostaCard from '../components/proposal/proposal'
-
+import { useEffect } from 'react';
 function Home() {
+    useEffect(() => {
+        const userInfo = {
+          user_info: {
+            name: 'Fake User',
+            email: 'fake_user@mail.com',
+            level: 0
+          }
+        };
+    
+        if(!localStorage.getItem('userInfo')) localStorage.setItem('userInfo', JSON.stringify(userInfo));
+      }, []);
     const styles = stylesHome;
-
+    
     return (
         <>
             <div style={styles.container}>
