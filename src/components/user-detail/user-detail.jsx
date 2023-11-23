@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import atadura from '../../assets/atadura.png';
 import { stylesUserDetail } from '../../css/styles';
 import UserDetailService from '../../services/UserDetail.service';
-
+import defaultImage from '../../assets/default.png'
 const UserDetail = () => {
   const styles = stylesUserDetail;
   const [userDetail, setUserDetail] = useState(null);
@@ -18,7 +17,6 @@ const UserDetail = () => {
           const localStorageData = JSON.parse(localStorage.getItem('userInfo'));
   
           combinedUserData.user_info = localStorageData['user_info']
-          console.log(`localStorageData => ${JSON.stringify(localStorageData)}`)
         }
   
         setUserDetail(combinedUserData);
@@ -46,7 +44,7 @@ const UserDetail = () => {
       {userDetail && (
         <>
           <div style={styles.userInfo}>
-            <img src={atadura} alt="User Avatar" style={styles.userImage} />
+            <img src={defaultImage} alt="User Avatar" style={styles.userImage} />
             <div style={styles.level}>
               Level {userDetail.user_info.level}
               <div style={styles.levelBar}></div>
