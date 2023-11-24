@@ -1,7 +1,7 @@
 import { Component } from "react";
 import axios from "axios";
 
-const baseURL = "" || "http://localhost:3001/";
+const baseURL = "https://mock-secret-cure-e2b23b09b8d1.herokuapp.com/" || "http://localhost:3001/";
 
 class AppInfoService extends Component {
     constructor(props) {
